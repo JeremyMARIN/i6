@@ -1,0 +1,66 @@
+h1, h2, p {
+	margin: 0;
+}
+
+body {
+	background-image: url("../img/nyc.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.round {
+	border-radius: 25px;
+}
+
+.panel {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.6);
+	margin: 8px;
+	padding: 16px;
+}
+
+
+#header, #footer {
+	text-align: center;
+}
+
+#navigation {
+	width: 20%;
+	float: left;
+}
+#navigation ul {
+	padding: 0;
+	list-style-type: none;
+}
+#navigation li {
+	margin-top: 8px;
+	padding: 8px 16px;
+	background-image: url("../img/button.png");
+	background-size: 100% 100%;
+	border-radius: 5px;
+	opacity: 0.9;
+	line-height: 100%;
+}
+#navigation a {
+	display: inline-block;
+	width: 100%;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#content {
+	width: 80%;
+	overflow: hidden;
+}
