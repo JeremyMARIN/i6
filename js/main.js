@@ -8,7 +8,7 @@ function init() {
 function load(container, page) {
 	var loadingPage;
 	if (page) {
-		loadingPage = page;
+		loadingPage = "include/" + page;
 	} else {
 		loadingPage = "include/" + container + ".html";
 	}
@@ -44,10 +44,15 @@ function nav() {
 			this.style.opacity = 0.9;
 		});
 		buttons[i].addEventListener("click", function(event) {
-			event.preventDefault();
+			event.preventDefault(); // avoid from redirecting
+
+			var url = this.getElementsByTagName("a")[0].getAttribute("href");
+			if (url.indexOf("http") == 0) {
+				window.location = url; // redirect to the absolute url
+			} else {
+				load("content", url); // change the page's content
+			}
 			this.style.backgroundImage = "url('img/button_clicked.png')";
-			load("content", this.getElementsByTagName("a")[0].href);
-			console.log(this.getElementsByTagName("a")[0].href);
 		});
 	}
 }

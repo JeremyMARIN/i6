@@ -1,5 +1,9 @@
-h1, h2, p {
+h2 {
 	margin: 0;
+}
+
+p {
+	margin: 0 0 8px 0;
 }
 
 body {
@@ -8,6 +12,13 @@ body {
 	background-attachment: fixed;
 }
 
+a:link {
+	color: #f0bb00;
+}
+
+a:visited {
+	color: #3ea2dc;
+}
 
 .centered {
 	display: block;
@@ -28,6 +39,42 @@ body {
 	background-color: rgba(0, 0, 0, 0.6);
 	margin: 8px;
 	padding: 16px;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.styled-list {
+	list-style-image: url('../img/bullet.png')
+}
+
+.styled-table {
+	width: 100%;
+	color: white;
+	text-align: center;
+}
+
+.styled-table tr:nth-child(even) {
+	background-color: #333;
+}
+
+.styled-table tr:nth-child(odd) {
+	background-color: #222;
+}
+
+.styled-table th {
+	background-color: black;
+}
+
+.content-image {
+	float: right;
+	width: 10%;
+}
+
+.media {
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
 
