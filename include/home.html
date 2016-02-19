@@ -1,4 +1,4 @@
-<div class="panel round">
+<div class="panel round" data-background-image="img/nyc.jpg">
 	<img class="content-image" alt="NYU Logo" src="img/nyu_logo.jpg" />
 
 	<h1>Home</h1>
@@ -16,9 +16,11 @@
 			<li>Shanghai</li>
 			<li>Paris</li>
 		</ul>
+	</p>
 
-		<hr />
+	<hr />
 
+	<p>
 		Styled table:
 		<table class="styled-table">
 			<tr>
@@ -47,5 +49,84 @@
 				<td>34</td>
 			</tr>
 		</table>
+	</p>
+
+	<hr />
+
+	<p>
+		Content of the file <em>main.js</em> in a <em>readonly textarea</em>:
+		<form method="get">
+			<textarea readonly class="centered" name="script_area" cols="100" rows="20" wrap="off">
+function init() {
+	load("header");
+	load("navigation");
+	load("footer");
+	load("content", "home.html");
+}
+
+function load(container, page) {
+	var loadingPage;
+	if (page) {
+		loadingPage = "include/" + page;
+	} else {
+		loadingPage = "include/" + container + ".html";
+	}
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", loadingPage);
+	xhr.addEventListener("readystatechange", function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			document.getElementById(container).innerHTML = xhr.responseText;
+			if (container == "navigation") {
+				nav();
+			}
+		} else {
+			document.getElementById(container).innerHTML = "Error " + xhr.status + "<br />Page <em>" + loadingPage + ".html</em> " + xhr.statusText + "<br />";
+		}
+	}, false);
+	xhr.send(null);
+}
+
+function nav() {
+	var buttons = document.getElementById("navigation");
+	buttons = buttons.getElementsByTagName("li");
+
+	for (var i = 0, max = buttons.length; i < max; i++) {
+		setupRollover(buttons[i]);
+	}
+}
+
+function setupRollover(button) {
+	button.outImage = new Image();
+	button.outImage.src = "img/button.png";
+	button.onmouseout = function() {
+		this.style.backgroundImage = "url(" + this.outImage.src + ")";
+		this.style.opacity = 0.9;
+	};
+
+	button.overImage = new Image();
+	button.overImage.src = "img/button.gif";
+	button.onmouseover = function() {
+		this.style.backgroundImage = "url(" + this.overImage.src + ")";
+		this.style.opacity = 1;
+	};
+
+	button.clickImage = new Image();
+	button.clickImage.src = "img/button_clicked.png";
+	button.onclick = function(event) {
+		event.preventDefault(); // avoid from redirecting
+
+		var url = this.getElementsByTagName("a")[0].getAttribute("href");
+		if (url.indexOf("http") == 0) {
+			window.location = url; // redirect to the absolute url
+		} else {
+			load("content", url); // change the page's content
+		}
+		this.style.backgroundImage = "url(" + this.clickImage.src + ")";
+	};
+}
+			</textarea>
+		</form>
+		The source code of other pages is available on my <a href="https://github.com/JeremyMARIN/i6">Git repository</a>.
 	</p>
 </div>
