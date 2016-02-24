@@ -54,8 +54,9 @@
 	<hr />
 
 	<p>
-		Content of the file <em>main.js</em> in a <em>readonly textarea</em>:
 		<form method="get">
+
+			Content of the file <em>main.js</em> in a <em>readonly textarea</em>:
 			<textarea readonly class="centered" name="script_area" cols="100" rows="20" wrap="off">
 function init() {
 	load("header");
@@ -124,6 +125,122 @@ function setupRollover(button) {
 		}
 		this.style.backgroundImage = "url(" + this.clickImage.src + ")";
 	};
+}
+			</textarea>
+			Content of the file <em>main.css</em>:
+			<textarea readonly class="centered" name="script_area" cols="100" rows="20" wrap="off">
+h2 {
+	margin: 0;
+}
+
+p {
+	margin: 0 0 8px 0;
+}
+
+body {
+	background-image: url("../img/nyc.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+a:link {
+	color: #f0bb00;
+}
+
+a:visited {
+	color: #3ea2dc;
+}
+
+.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.round {
+	border-radius: 25px;
+}
+
+.panel {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.6);
+	margin: 8px;
+	padding: 16px;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.styled-list {
+	list-style-image: url('../img/bullet.png')
+}
+
+.styled-table {
+	width: 100%;
+	color: white;
+	text-align: center;
+}
+
+.styled-table tr:nth-child(even) {
+	background-color: #333;
+}
+
+.styled-table tr:nth-child(odd) {
+	background-color: #222;
+}
+
+.styled-table th {
+	background-color: black;
+}
+
+.content-image {
+	float: right;
+	width: 10%;
+}
+
+.media {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+
+#header, #footer {
+	text-align: center;
+}
+
+#navigation {
+	width: 20%;
+	float: left;
+}
+#navigation ul {
+	padding: 0;
+	list-style-type: none;
+}
+#navigation li {
+	margin-top: 8px;
+	padding: 8px 16px;
+	background-image: url("../img/button.png");
+	background-size: 100% 100%;
+	border-radius: 5px;
+	opacity: 0.9;
+	line-height: 100%;
+}
+#navigation a {
+	display: inline-block;
+	width: 100%;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#content {
+	width: 80%;
+	overflow: hidden;
 }
 			</textarea>
 		</form>
