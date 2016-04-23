@@ -76,6 +76,9 @@ a:visited {
 	margin-top: 8px;
 	margin-bottom: 8px;
 }
+.download-img {
+	width: 20%;
+}
 
 
 #header, #footer {
@@ -120,10 +123,13 @@ a:visited {
 	border-collapse: collapse;
 }
 #assignments-table th:nth-child(1), td:nth-child(1) {
-	width: 40%;
+	width: 25%;
 }
 #assignments-table th:nth-child(2), td:nth-child(2) {
 	width: 60%;
+}
+#assignments-table th:nth-child(3), td:nth-child(3) {
+	width: 15%;
 }
 #assignments-table tr {
 	height: 35px;

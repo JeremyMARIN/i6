@@ -60,7 +60,7 @@ function setupRollover(button) {
 		event.preventDefault(); // avoid from redirecting
 
 		var url = this.getElementsByTagName("a")[0].getAttribute("href");
-		if (url.indexOf("http") == 0) {
+		if (url.indexOf("http") == 0 || url.indexOf("..") == 0) {
 			window.location = url; // redirect to the absolute url
 		} else {
 			load("content", url); // change the page's content
